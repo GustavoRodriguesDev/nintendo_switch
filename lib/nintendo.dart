@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:nintendo_switch/componentes/analogico.dart';
+import 'package:nintendo_switch/componentes/bigButton.dart';
 
 class NintendoSwitch extends StatefulWidget {
   const NintendoSwitch({Key? key}) : super(key: key);
@@ -21,7 +21,7 @@ class _NintendoSwitchState extends State<NintendoSwitch> {
             color: Color(0xFF32383A),
             child: Column(
               children: [
-                Analogico(),
+                BigButton(),
               ],
             ),
           ),

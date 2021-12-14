@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class Analogico extends StatelessWidget {
-  const Analogico({Key? key}) : super(key: key);
+class BigButton extends StatelessWidget {
+  const BigButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
