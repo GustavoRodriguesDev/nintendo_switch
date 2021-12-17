@@ -17,22 +17,20 @@ class _NintendoSwitchState extends State<NintendoSwitch> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(children: [
-        Container(
-          width: MediaQuery.of(context).size.width,
-          color: Color(0xFF32383A),
-          child: Column(
-            children: [
-              BigButton(
-                size: 300,
-              ),
-              SoundButton(),
-              HomeButton(),
-              DirectionalButton()
-            ],
-          ),
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        color: Color(0xFF32383A),
+        child: Column(
+          children: [
+            BigButton(
+              size: 300,
+            ),
+            SoundButton(),
+            HomeButton(),
+            DirectionalButton()
+          ],
         ),
-      ]),
+      ),
     );
   }
 }

@@ -11,6 +11,7 @@ class Direcional extends StatelessWidget {
   final AlignmentGeometry gradientBegin;
   final AlignmentGeometry gradientEnd;
   final double angule;
+  final String? letterButton;
   const Direcional({
     Key? key,
     required this.containerUm,
@@ -19,6 +20,7 @@ class Direcional extends StatelessWidget {
     required this.gradientEnd,
     required this.sizeIcom,
     required this.angule,
+    this.letterButton,
   }) : super(key: key);
 
   @override
@@ -53,14 +55,29 @@ class Direcional extends StatelessWidget {
                 Color(0xFF050F11),
               ]),
         ),
-        child: Transform(
-          alignment: Alignment.center,
-          transform: Matrix4.rotationZ(angule * pi / 180),
-          child: Icon(
-            Icons.play_arrow,
-            size: sizeIcom,
-          ),
-        ),
+        child: letterButton != null
+            ? Align(
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: Text(
+                    letterButton!,
+                    textAlign: TextAlign.end,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.w300),
+                  ),
+                ),
+              )
+            : Transform(
+                alignment: Alignment.center,
+                transform: Matrix4.rotationZ(angule * pi / 180),
+                child: Icon(
+                  Icons.play_arrow,
+                  size: sizeIcom,
+                ),
+              ),
       ),
     );
   }
