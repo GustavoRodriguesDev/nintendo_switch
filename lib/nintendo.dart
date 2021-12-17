@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:nintendo_switch/componentes/bigButton.dart';
+import 'package:nintendo_switch/componentes/homeButton.dart';
+import 'package:nintendo_switch/componentes/soundButton.dart';
 
 class NintendoSwitch extends StatefulWidget {
   const NintendoSwitch({Key? key}) : super(key: key);
@@ -14,18 +16,18 @@ class _NintendoSwitchState extends State<NintendoSwitch> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            color: Color(0xFF32383A),
-            child: Column(
-              children: [
-                BigButton(),
-              ],
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        color: Color(0xFF32383A),
+        child: Column(
+          children: [
+            BigButton(
+              size: 300,
             ),
-          ),
-        ],
+            SoundButton(),
+            HomeButton()
+          ],
+        ),
       ),
     );
   }
