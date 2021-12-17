@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, file_names
+
 import 'package:flutter/material.dart';
 
 class HomeButton extends StatelessWidget {
@@ -14,6 +16,10 @@ class HomeButton extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(50),
         color: Color(0xFF8F8989),
+      ),
+      child: Icon(
+        Icons.home,
+        size: 33,
       ),
     );
   }

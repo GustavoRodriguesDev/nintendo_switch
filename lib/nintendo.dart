@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:nintendo_switch/componentes/bigButton.dart';
+import 'package:nintendo_switch/componentes/directionalButton.dart';
 import 'package:nintendo_switch/componentes/homeButton.dart';
 import 'package:nintendo_switch/componentes/soundButton.dart';
 
@@ -25,7 +26,8 @@ class _NintendoSwitchState extends State<NintendoSwitch> {
               size: 300,
             ),
             SoundButton(),
-            HomeButton()
+            HomeButton(),
+            DirectionalButton()
           ],
         ),
       ),
