@@ -1,8 +1,12 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:nintendo_switch/componentes/direcinais/DirecionalRight.dart';
+import 'package:nintendo_switch/componentes/direcinais/direcinalDown.dart';
+import 'package:nintendo_switch/componentes/direcinais/direcionalLeft.dart';
+import 'package:nintendo_switch/componentes/direcinais/direcionalUp.dart';
 
 class DirectionalButton extends StatelessWidget {
   const DirectionalButton({Key? key}) : super(key: key);
@@ -13,82 +17,11 @@ class DirectionalButton extends StatelessWidget {
       child: Column(
         children: [
           DirecinalUp(),
+          DirecionalLeft(),
+          DirecionalDown(),
+          DirecionalRight(),
         ],
       ),
     );
-  }
-}
-
-class DirecinalUp extends StatelessWidget {
-  const DirecinalUp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 200,
-      width: 200,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        gradient: LinearGradient(
-          begin: Alignment.bottomCenter,
-          end: Alignment.topCenter,
-          colors: [
-            Color(0xFF050F11),
-            Color(0xFF7B8287),
-          ],
-          stops: [0.10, 9.0],
-        ),
-      ),
-      child: Container(
-        width: 160,
-        height: 160,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color(0xFF686D70),
-                Color(0xFF050F11),
-              ]),
-        ),
-        child: RotatedBox(
-          quarterTurns: 15,
-          child: Icon(
-            Icons.play_arrow,
-            size: 70,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class DirecionalLeft extends StatelessWidget {
-  const DirecionalLeft({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
-class DirecionalDown extends StatelessWidget {
-  const DirecionalDown({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
-class DirecionalRight extends StatelessWidget {
-  const DirecionalRight({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
