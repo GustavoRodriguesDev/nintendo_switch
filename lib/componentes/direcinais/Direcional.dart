@@ -1,14 +1,25 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, file_names
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
-class DirecionalRight extends StatelessWidget {
-  final double? containerUm;
-  final double? containerDOis;
-  final double? sizeIcom;
-  const DirecionalRight(
-      {Key? key, this.containerUm, this.containerDOis, this.sizeIcom})
-      : super(key: key);
+class Direcional extends StatelessWidget {
+  final double containerUm;
+  final double containerDOis;
+  final double sizeIcom;
+  final AlignmentGeometry gradientBegin;
+  final AlignmentGeometry gradientEnd;
+  final double angule;
+  const Direcional({
+    Key? key,
+    required this.containerUm,
+    required this.containerDOis,
+    required this.gradientBegin,
+    required this.gradientEnd,
+    required this.sizeIcom,
+    required this.angule,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +30,8 @@ class DirecionalRight extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         gradient: LinearGradient(
-          begin: Alignment.bottomCenter,
-          end: Alignment.topCenter,
+          begin: gradientBegin,
+          end: gradientEnd,
           colors: [
             Color(0xFF050F11),
             Color(0xFF7B8287),
@@ -42,8 +53,9 @@ class DirecionalRight extends StatelessWidget {
                 Color(0xFF050F11),
               ]),
         ),
-        child: RotatedBox(
-          quarterTurns: 0,
+        child: Transform(
+          alignment: Alignment.center,
+          transform: Matrix4.rotationZ(angule * pi / 180),
           child: Icon(
             Icons.play_arrow,
             size: sizeIcom,

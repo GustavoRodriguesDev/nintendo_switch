@@ -3,10 +3,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:nintendo_switch/componentes/direcinais/DirecionalRight.dart';
-import 'package:nintendo_switch/componentes/direcinais/direcinalDonw.dart';
-import 'package:nintendo_switch/componentes/direcinais/direcionalLeft.dart';
-import 'package:nintendo_switch/componentes/direcinais/direcionalUp.dart';
+import 'package:nintendo_switch/componentes/direcinais/Direcional.dart';
 
 class DirectionalButton extends StatelessWidget {
   const DirectionalButton({Key? key}) : super(key: key);
@@ -14,12 +11,59 @@ class DirectionalButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
+      width: 150,
+      height: 150,
+      child: Stack(
         children: [
-          DirecinalUp(containerUm: 50, containerDOis: 40, sizeIcom: 25),
-          DirecionalLeft(containerUm: 50, containerDOis: 40, sizeIcom: 25),
-          DirecionalDonw(containerUm: 50, containerDOis: 40, sizeIcom: 25),
-          DirecionalRight(containerUm: 50, containerDOis: 40, sizeIcom: 25),
+          Positioned(
+            top: 0,
+            right: 10,
+            left: 10,
+            child: Direcional(
+              containerUm: 50,
+              containerDOis: 40,
+              sizeIcom: 25,
+              gradientBegin: Alignment.bottomCenter,
+              gradientEnd: Alignment.topCenter,
+              angule: 270,
+            ),
+          ),
+          Positioned(
+            top: 10,
+            bottom: 10,
+            right: 0,
+            child: Direcional(
+                containerUm: 50,
+                containerDOis: 40,
+                sizeIcom: 25,
+                gradientBegin: Alignment.bottomCenter,
+                gradientEnd: Alignment.topCenter,
+                angule: 0),
+          ),
+          Positioned(
+            top: 10,
+            bottom: 10,
+            left: 0,
+            child: Direcional(
+                containerUm: 50,
+                containerDOis: 40,
+                sizeIcom: 25,
+                gradientBegin: Alignment.bottomCenter,
+                gradientEnd: Alignment.topCenter,
+                angule: 180),
+          ),
+          Positioned(
+            bottom: 0,
+            left: 10,
+            right: 10,
+            child: Direcional(
+                containerUm: 50,
+                containerDOis: 40,
+                sizeIcom: 25,
+                gradientBegin: Alignment.bottomCenter,
+                gradientEnd: Alignment.topCenter,
+                angule: 90),
+          ),
         ],
       ),
     );
