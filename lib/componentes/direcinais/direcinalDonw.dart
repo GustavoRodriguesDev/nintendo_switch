@@ -2,14 +2,22 @@
 
 import 'package:flutter/material.dart';
 
-class DirecionalDown extends StatelessWidget {
-  const DirecionalDown({Key? key}) : super(key: key);
+class DirecionalDonw extends StatelessWidget {
+  final double? containerUm;
+  final double? containerDOis;
+  final double? sizeIcom;
+  const DirecionalDonw(
+      {Key? key,
+      required this.containerUm,
+      required this.containerDOis,
+      required this.sizeIcom})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
-      width: 200,
+      height: containerUm,
+      width: containerUm,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
@@ -24,8 +32,8 @@ class DirecionalDown extends StatelessWidget {
         ),
       ),
       child: Container(
-        width: 160,
-        height: 160,
+        width: containerDOis,
+        height: containerDOis,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
@@ -41,7 +49,7 @@ class DirecionalDown extends StatelessWidget {
           quarterTurns: 5,
           child: Icon(
             Icons.play_arrow,
-            size: 70,
+            size: sizeIcom,
           ),
         ),
       ),

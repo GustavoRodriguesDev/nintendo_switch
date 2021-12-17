@@ -3,13 +3,18 @@
 import 'package:flutter/material.dart';
 
 class DirecionalRight extends StatelessWidget {
-  const DirecionalRight({Key? key}) : super(key: key);
+  final double? containerUm;
+  final double? containerDOis;
+  final double? sizeIcom;
+  const DirecionalRight(
+      {Key? key, this.containerUm, this.containerDOis, this.sizeIcom})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
-      width: 200,
+      height: containerUm,
+      width: containerUm,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
@@ -24,8 +29,8 @@ class DirecionalRight extends StatelessWidget {
         ),
       ),
       child: Container(
-        width: 160,
-        height: 160,
+        width: containerDOis,
+        height: containerDOis,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
@@ -41,7 +46,7 @@ class DirecionalRight extends StatelessWidget {
           quarterTurns: 0,
           child: Icon(
             Icons.play_arrow,
-            size: 70,
+            size: sizeIcom,
           ),
         ),
       ),
