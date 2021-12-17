@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class DirectionalButton extends StatelessWidget {
@@ -23,8 +25,8 @@ class DirecinalUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
-      width: 50,
+      height: 200,
+      width: 200,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
@@ -32,28 +34,32 @@ class DirecinalUp extends StatelessWidget {
           begin: Alignment.bottomCenter,
           end: Alignment.topCenter,
           colors: [
-            Color(0xFF7B8287),
             Color(0xFF050F11),
+            Color(0xFF7B8287),
           ],
+          stops: [0.10, 9.0],
         ),
       ),
       child: Container(
-        width: 35,
-        height: 35,
+        width: 160,
+        height: 160,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFF686D70),
-              Color(0xFF050F11),
-            ],
-          ),
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xFF686D70),
+                Color(0xFF050F11),
+              ]),
         ),
-        child: Icon(
-          Icons.play_arrow,
+        child: RotatedBox(
+          quarterTurns: 15,
+          child: Icon(
+            Icons.play_arrow,
+            size: 70,
+          ),
         ),
       ),
     );
