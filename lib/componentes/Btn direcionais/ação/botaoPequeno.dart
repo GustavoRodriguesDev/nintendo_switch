@@ -4,22 +4,22 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class Direcional extends StatelessWidget {
+class BotaoPequeno extends StatelessWidget {
   final double containerUm;
   final double containerDOis;
-  final double sizeIcom;
+  final double? sizeIcom;
   final AlignmentGeometry gradientBegin;
   final AlignmentGeometry gradientEnd;
-  final double angule;
+  final double? angule;
   final String? letterButton;
-  const Direcional({
+  const BotaoPequeno({
     Key? key,
     required this.containerUm,
     required this.containerDOis,
     required this.gradientBegin,
     required this.gradientEnd,
-    required this.sizeIcom,
-    required this.angule,
+    this.sizeIcom,
+    this.angule,
     this.letterButton,
   }) : super(key: key);
 
@@ -59,7 +59,7 @@ class Direcional extends StatelessWidget {
             ? Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
-                  padding: const EdgeInsets.all(6.0),
+                  padding: const EdgeInsets.all(3.0),
                   child: Text(
                     letterButton!,
                     textAlign: TextAlign.end,
@@ -72,7 +72,7 @@ class Direcional extends StatelessWidget {
               )
             : Transform(
                 alignment: Alignment.center,
-                transform: Matrix4.rotationZ(angule * pi / 180),
+                transform: Matrix4.rotationZ(angule! * pi / 180),
                 child: Icon(
                   Icons.play_arrow,
                   size: sizeIcom,

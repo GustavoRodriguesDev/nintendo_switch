@@ -3,8 +3,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-
-import 'direcionais/Direcional.dart';
+import 'package:nintendo_switch/componentes/Btn%20direcionais/a%C3%A7%C3%A3o/botaoPequeno.dart';
 
 class DirectionalButton extends StatelessWidget {
   const DirectionalButton({Key? key}) : super(key: key);
@@ -20,7 +19,7 @@ class DirectionalButton extends StatelessWidget {
             top: 0,
             right: 10,
             left: 10,
-            child: Direcional(
+            child: BotaoPequeno(
               containerUm: 50,
               containerDOis: 40,
               sizeIcom: 25,
@@ -33,7 +32,7 @@ class DirectionalButton extends StatelessWidget {
             top: 10,
             bottom: 10,
             right: 0,
-            child: Direcional(
+            child: BotaoPequeno(
                 containerUm: 50,
                 containerDOis: 40,
                 sizeIcom: 25,
@@ -45,7 +44,7 @@ class DirectionalButton extends StatelessWidget {
             top: 10,
             bottom: 10,
             left: 0,
-            child: Direcional(
+            child: BotaoPequeno(
                 containerUm: 50,
                 containerDOis: 40,
                 sizeIcom: 25,
@@ -57,14 +56,13 @@ class DirectionalButton extends StatelessWidget {
             bottom: 0,
             left: 10,
             right: 10,
-            child: Direcional(
+            child: BotaoPequeno(
               containerUm: 50,
               containerDOis: 40,
               sizeIcom: 25,
               gradientBegin: Alignment.bottomCenter,
               gradientEnd: Alignment.topCenter,
               angule: 90,
-              letterButton: 'B',
             ),
           ),
         ],
