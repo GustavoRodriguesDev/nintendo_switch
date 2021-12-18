@@ -1,15 +1,20 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
 
 class Retangulo extends StatelessWidget {
-  const Retangulo({Key? key}) : super(key: key);
+  final double altura;
+  final double largura;
+  const Retangulo({
+    required this.altura,
+    required this.largura,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 150,
-      height: 50,
+      width: largura,
+      height: altura,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         gradient: LinearGradient(
