@@ -21,7 +21,7 @@ class BigButton extends StatelessWidget {
       height: size,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.black, width: 2),
+        border: Border.all(color: Colors.black, width: size * 0.017),
         color: Color(0xFF5A6465),
         shape: BoxShape.circle,
         gradient: LinearGradient(
@@ -33,40 +33,45 @@ class BigButton extends StatelessWidget {
           ],
         ),
       ),
-      child: Container(
-        width: 250,
-        height: 250,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          gradient: LinearGradient(
-            begin: Alignment.bottomLeft,
-            end: Alignment.topRight,
-            colors: [
-              Color(0xFF686D70),
-              Color(0xFF050F11),
-            ],
-          ),
-        ),
-        child: Container(
-          width: 150,
-          height: 150,
+      child: LayoutBuilder(builder: (context, constraints) {
+        return Container(
+          width: constraints.maxWidth * 0.81,
+          height: constraints.maxHeight * 0.81,
+          alignment: Alignment.center,
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.black, width: 2),
-            color: Color(0xFF676A6F),
             shape: BoxShape.circle,
             gradient: LinearGradient(
-              begin: Alignment.bottomCenter,
-              end: Alignment.topCenter,
+              begin: Alignment.bottomLeft,
+              end: Alignment.topRight,
               colors: [
-                Color(0xFF242625),
-                Color(0xFF676A6F),
+                Color(0xFF686D70),
+                Color(0xFF050F11),
               ],
-              stops: [0.0, 1.0],
             ),
           ),
-        ),
-      ),
+          child: LayoutBuilder(builder: (context, constraints) {
+            return Container(
+              width: constraints.maxWidth * 0.91,
+              height: constraints.maxHeight * 0.91,
+              decoration: BoxDecoration(
+                border: Border.all(
+                    color: Colors.black, width: constraints.maxWidth * 0.02),
+                color: Color(0xFF676A6F),
+                shape: BoxShape.circle,
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  colors: [
+                    Color(0xFF242625),
+                    Color(0xFF676A6F),
+                  ],
+                  stops: [0.0, 1.0],
+                ),
+              ),
+            );
+          }),
+        );
+      }),
     );
   }
 }

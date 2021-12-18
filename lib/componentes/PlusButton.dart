@@ -9,8 +9,8 @@ class PLusButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
-      width: 150,
+      height: double.minPositive,
+      width: double.minPositive,
       child: Stack(
         children: [
           Positioned(
@@ -19,7 +19,7 @@ class PLusButton extends StatelessWidget {
             right: 10,
             left: 10,
             child: Center(
-              child: Retangulo(altura: 40, largura: 150),
+              child: Retangulo(altura: 7, largura: 25),
             ),
           ),
           Positioned(
@@ -27,7 +27,7 @@ class PLusButton extends StatelessWidget {
             bottom: 10,
             right: 10,
             left: 10,
-            child: Center(child: Retangulo(altura: 150, largura: 40)),
+            child: Center(child: Retangulo(altura: 25, largura: 7)),
           ),
         ],
       ),

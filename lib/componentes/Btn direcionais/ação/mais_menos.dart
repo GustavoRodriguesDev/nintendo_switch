@@ -16,7 +16,7 @@ class Retangulo extends StatelessWidget {
       width: largura,
       height: altura,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(1),
         gradient: LinearGradient(
           begin: Alignment.bottomCenter,
           end: Alignment.topCenter,

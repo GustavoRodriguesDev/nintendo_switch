@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:nintendo_switch/componentes/PlusButton.dart';
+import 'package:nintendo_switch/componentes/btnMenos.dart';
+import 'package:nintendo_switch/componentes/control.dart';
+import 'package:nintendo_switch/componentes/plusButton.dart';
 import 'package:nintendo_switch/componentes/actionButton.dart';
 import 'package:nintendo_switch/componentes/bigButton.dart';
 import 'package:nintendo_switch/componentes/directionalButton.dart';
@@ -19,25 +21,25 @@ class _NintendoSwitchState extends State<NintendoSwitch> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            color: Color(0xFF32383A),
-            child: Column(
-              children: [
-                BigButton(
-                  size: 300,
-                ),
-                SoundButton(),
-                HomeButton(),
-                DirectionalButton(),
-                ActionButton(),
-                PLusButton()
-              ],
+      body: Container(
+        color: Color(0xFF32383A),
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            BigButton(
+              size: 200,
             ),
-          ),
-        ],
+            // SoundButton(),
+            // HomeButton(),
+            // DirectionalButton(),
+            // ActionButton(),
+            // PLusButton(),
+            // BtnMenos(),
+            // ControlLeft(),
+          ],
+        ),
       ),
     );
   }
