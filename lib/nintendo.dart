@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:nintendo_switch/componentes/PlusButton.dart';
 import 'package:nintendo_switch/componentes/actionButton.dart';
 import 'package:nintendo_switch/componentes/bigButton.dart';
 import 'package:nintendo_switch/componentes/directionalButton.dart';
@@ -31,7 +32,8 @@ class _NintendoSwitchState extends State<NintendoSwitch> {
                 SoundButton(),
                 HomeButton(),
                 DirectionalButton(),
-                ActionButton()
+                ActionButton(),
+                PLusButton()
               ],
             ),
           ),

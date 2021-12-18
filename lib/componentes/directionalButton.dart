@@ -3,7 +3,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:nintendo_switch/componentes/Btn%20direcionais/a%C3%A7%C3%A3o/botaoPequeno.dart';
+import 'package:nintendo_switch/componentes/bot%C3%B5es%20componentes/a%C3%A7%C3%A3o/botaoPequeno.dart';
 
 class DirectionalButton extends StatelessWidget {
   const DirectionalButton({Key? key}) : super(key: key);
