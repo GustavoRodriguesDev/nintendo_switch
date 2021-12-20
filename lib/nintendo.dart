@@ -23,21 +23,18 @@ class _NintendoSwitchState extends State<NintendoSwitch> {
     return Scaffold(
       body: Container(
         color: Color(0xFF32383A),
-        height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            BigButton(
-              size: 200,
-            ),
+            // BigButton(size: 59),
             // SoundButton(),
-            // HomeButton(),
+            // HomeButton(size: 29),
             // DirectionalButton(),
             // ActionButton(),
             // PLusButton(),
             // BtnMenos(),
-            // ControlLeft(),
+            ControlLeft(),
           ],
         ),
       ),

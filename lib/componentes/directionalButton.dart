@@ -20,8 +20,7 @@ class DirectionalButton extends StatelessWidget {
             right: 10,
             left: 10,
             child: BotaoPequeno(
-              containerUm: 50,
-              containerDOis: 40,
+              size: 50,
               sizeIcom: 25,
               gradientBegin: Alignment.bottomCenter,
               gradientEnd: Alignment.topCenter,
@@ -33,8 +32,7 @@ class DirectionalButton extends StatelessWidget {
             bottom: 10,
             right: 0,
             child: BotaoPequeno(
-                containerUm: 50,
-                containerDOis: 40,
+                size: 50,
                 sizeIcom: 25,
                 gradientBegin: Alignment.bottomCenter,
                 gradientEnd: Alignment.topCenter,
@@ -45,8 +43,7 @@ class DirectionalButton extends StatelessWidget {
             bottom: 10,
             left: 0,
             child: BotaoPequeno(
-                containerUm: 50,
-                containerDOis: 40,
+                size: 50,
                 sizeIcom: 25,
                 gradientBegin: Alignment.bottomCenter,
                 gradientEnd: Alignment.topCenter,
@@ -57,8 +54,7 @@ class DirectionalButton extends StatelessWidget {
             left: 10,
             right: 10,
             child: BotaoPequeno(
-              containerUm: 50,
-              containerDOis: 40,
+              size: 50,
               sizeIcom: 25,
               gradientBegin: Alignment.bottomCenter,
               gradientEnd: Alignment.topCenter,

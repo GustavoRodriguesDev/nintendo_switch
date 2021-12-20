@@ -9,57 +9,39 @@ class ActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
-      width: 150,
-      child: Stack(
+      height: 86,
+      width: 86,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Positioned(
-            bottom: 0,
-            right: 10,
-            left: 10,
-            child: BotaoPequeno(
-              containerUm: 50,
-              containerDOis: 35,
-              gradientBegin: Alignment.bottomCenter,
-              gradientEnd: Alignment.topCenter,
-              letterButton: 'B',
-            ),
+          BotaoPequeno(
+            size: 28,
+            gradientBegin: Alignment.bottomCenter,
+            gradientEnd: Alignment.topCenter,
+            letterButton: 'X',
           ),
-          Positioned(
-            top: 0,
-            right: 10,
-            left: 10,
-            child: BotaoPequeno(
-              containerUm: 50,
-              containerDOis: 35,
-              gradientBegin: Alignment.bottomCenter,
-              gradientEnd: Alignment.topCenter,
-              letterButton: 'X',
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              BotaoPequeno(
+                size: 28,
+                gradientBegin: Alignment.bottomCenter,
+                gradientEnd: Alignment.topCenter,
+                letterButton: 'Y',
+              ),
+              BotaoPequeno(
+                size: 28,
+                gradientBegin: Alignment.bottomCenter,
+                gradientEnd: Alignment.topCenter,
+                letterButton: 'A',
+              ),
+            ],
           ),
-          Positioned(
-            bottom: 10,
-            right: 0,
-            top: 10,
-            child: BotaoPequeno(
-              containerUm: 50,
-              containerDOis: 35,
-              gradientBegin: Alignment.bottomCenter,
-              gradientEnd: Alignment.topCenter,
-              letterButton: 'A',
-            ),
-          ),
-          Positioned(
-            bottom: 10,
-            top: 10,
-            left: 0,
-            child: BotaoPequeno(
-              containerUm: 50,
-              containerDOis: 35,
-              gradientBegin: Alignment.bottomCenter,
-              gradientEnd: Alignment.topCenter,
-              letterButton: 'B',
-            ),
+          BotaoPequeno(
+            size: 28,
+            gradientBegin: Alignment.bottomCenter,
+            gradientEnd: Alignment.topCenter,
+            letterButton: 'B',
           ),
         ],
       ),
