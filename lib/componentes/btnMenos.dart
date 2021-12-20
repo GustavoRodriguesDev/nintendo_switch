@@ -1,7 +1,7 @@
 // ignore_for_file: sized_box_for_whitespace, prefer_const_constructors
 
 import 'package:flutter/widgets.dart';
-import 'package:nintendo_switch/componentes/compotentes%20botoes/a%C3%A7%C3%A3o/mais_menos.dart';
+import 'package:nintendo_switch/componentes/Btn%20direcionais/a%C3%A7%C3%A3o/mais_menos.dart';
 
 class BtnMenos extends StatelessWidget {
   const BtnMenos({Key? key}) : super(key: key);

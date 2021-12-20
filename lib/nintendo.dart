@@ -25,7 +25,7 @@ class _NintendoSwitchState extends State<NintendoSwitch> {
         color: Color(0xFF32383A),
         width: MediaQuery.of(context).size.width,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             // BigButton(size: 59),
             // SoundButton(),
@@ -34,7 +34,13 @@ class _NintendoSwitchState extends State<NintendoSwitch> {
             // ActionButton(),
             // PLusButton(),
             // BtnMenos(),
-            ControlLeft(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ControlLeft(),
+                ControlLeft(),
+              ],
+            ),
           ],
         ),
       ),
