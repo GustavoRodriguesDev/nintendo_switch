@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:nintendo_switch/componentes/Lamp_grup.dart';
 import 'package:nintendo_switch/componentes/btnMenos.dart';
+import 'package:nintendo_switch/componentes/componente%20bot%C3%B5es/lamp.dart';
 import 'package:nintendo_switch/componentes/control.dart';
 import 'package:nintendo_switch/componentes/plusButton.dart';
 import 'package:nintendo_switch/componentes/actionButton.dart';
@@ -37,8 +39,27 @@ class _NintendoSwitchState extends State<NintendoSwitch> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ControlLeft(),
-                ControlLeft(),
+                Control(
+                  alignControl: Alignment.bottomLeft,
+                  colorControl: Color(0xFF00BDDD),
+                  heightControl: 257,
+                  widthControl: 123,
+                  radiusControl: BorderRadius.only(
+                    topRight: Radius.circular(80),
+                  ),
+                ),
+                LampGroup(),
+                FlutterLogo(),
+                LampGroup(),
+                Control(
+                  alignControl: Alignment.bottomRight,
+                  colorControl: Color(0xFFFF5F53),
+                  heightControl: 257,
+                  widthControl: 123,
+                  radiusControl: BorderRadius.only(
+                    topLeft: Radius.circular(80),
+                  ),
+                ),
               ],
             ),
           ],

@@ -1,7 +1,8 @@
 // ignore_for_file: sized_box_for_whitespace, prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names
 
 import 'package:flutter/material.dart';
-import 'package:nintendo_switch/componentes/Btn%20direcionais/a%C3%A7%C3%A3o/botaoPequeno.dart';
+
+import 'componente botões/botaoPequeno.dart';
 
 class ActionButton extends StatelessWidget {
   const ActionButton({Key? key}) : super(key: key);
