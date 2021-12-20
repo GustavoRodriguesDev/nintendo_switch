@@ -22,10 +22,11 @@ class NintendoSwitch extends StatefulWidget {
 class _NintendoSwitchState extends State<NintendoSwitch> {
   @override
   Widget build(BuildContext context) {
+    double size = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
         color: Color(0xFF32383A),
-        width: MediaQuery.of(context).size.width,
+        width: size,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -47,6 +48,10 @@ class _NintendoSwitchState extends State<NintendoSwitch> {
                   radiusControl: BorderRadius.only(
                     topRight: Radius.circular(80),
                   ),
+                  btn1: BtnMenos(),
+                  btn2: BigButton(),
+                  btn3: DirectionalButton(),
+                  btn4: SoundButton(size: 23),
                 ),
                 LampGroup(),
                 FlutterLogo(),
@@ -59,6 +64,10 @@ class _NintendoSwitchState extends State<NintendoSwitch> {
                   radiusControl: BorderRadius.only(
                     topLeft: Radius.circular(80),
                   ),
+                  btn1: PLusButton(),
+                  btn2: ActionButton(),
+                  btn3: BigButton(),
+                  btn4: HomeButton(size: 29),
                 ),
               ],
             ),

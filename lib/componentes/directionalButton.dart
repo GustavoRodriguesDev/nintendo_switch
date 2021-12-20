@@ -12,55 +12,41 @@ class DirectionalButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 150,
-      height: 150,
-      child: Stack(
+      width: 86,
+      height: 86,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Positioned(
-            top: 0,
-            right: 10,
-            left: 10,
-            child: BotaoPequeno(
-              size: 50,
-              sizeIcom: 25,
-              gradientBegin: Alignment.bottomCenter,
-              gradientEnd: Alignment.topCenter,
-              angule: 270,
-            ),
+          BotaoPequeno(
+            size: 28,
+            sizeIcom: 25,
+            gradientBegin: Alignment.bottomCenter,
+            gradientEnd: Alignment.topCenter,
+            angule: 270,
           ),
-          Positioned(
-            top: 10,
-            bottom: 10,
-            right: 0,
-            child: BotaoPequeno(
-                size: 50,
-                sizeIcom: 25,
-                gradientBegin: Alignment.bottomCenter,
-                gradientEnd: Alignment.topCenter,
-                angule: 0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              BotaoPequeno(
+                  size: 28,
+                  sizeIcom: 25,
+                  gradientBegin: Alignment.bottomCenter,
+                  gradientEnd: Alignment.topCenter,
+                  angule: 180),
+              BotaoPequeno(
+                  size: 28,
+                  sizeIcom: 25,
+                  gradientBegin: Alignment.bottomCenter,
+                  gradientEnd: Alignment.topCenter,
+                  angule: 0),
+            ],
           ),
-          Positioned(
-            top: 10,
-            bottom: 10,
-            left: 0,
-            child: BotaoPequeno(
-                size: 50,
-                sizeIcom: 25,
-                gradientBegin: Alignment.bottomCenter,
-                gradientEnd: Alignment.topCenter,
-                angule: 180),
-          ),
-          Positioned(
-            bottom: 0,
-            left: 10,
-            right: 10,
-            child: BotaoPequeno(
-              size: 50,
-              sizeIcom: 25,
-              gradientBegin: Alignment.bottomCenter,
-              gradientEnd: Alignment.topCenter,
-              angule: 90,
-            ),
+          BotaoPequeno(
+            size: 28,
+            sizeIcom: 25,
+            gradientBegin: Alignment.bottomCenter,
+            gradientEnd: Alignment.topCenter,
+            angule: 90,
           ),
         ],
       ),

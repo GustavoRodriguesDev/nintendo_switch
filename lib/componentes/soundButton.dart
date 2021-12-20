@@ -3,13 +3,15 @@
 import 'package:flutter/material.dart';
 
 class SoundButton extends StatelessWidget {
-  const SoundButton({Key? key}) : super(key: key);
+  double size;
+  SoundButton({required this.size});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 50,
-      height: 50,
+      width: size,
+      height: size,
+      alignment: Alignment.center,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4),
         gradient: LinearGradient(
@@ -22,36 +24,31 @@ class SoundButton extends StatelessWidget {
           stops: [0.0, 1.0],
         ),
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(4.0),
-        child: Stack(
-          children: [
-            Container(
-              width: 48,
-              height: 48,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                  colors: [
-                    Color(0xFF4A494E),
-                    Color(0xFF525157),
-                  ],
-                ),
-              ),
-            ),
-            Center(
-              child: Container(
-                width: 31,
-                height: 31,
-                decoration: BoxDecoration(
-                    color: Color(0xFF182022),
-                    borderRadius: BorderRadius.circular(50)),
-              ),
-            )
-          ],
+      child: Container(
+        width: size * 0.85,
+        height: size * 0.85,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          gradient: LinearGradient(
+            begin: Alignment.bottomCenter,
+            end: Alignment.topCenter,
+            colors: [
+              Color(0xFF4A494E),
+              Color(0xFF525157),
+            ],
+          ),
         ),
+        child: LayoutBuilder(builder: (context, constraints) {
+          return Container(
+            width: constraints.maxWidth * 0.80,
+            height: constraints.maxHeight * 0.80,
+            decoration: BoxDecoration(
+              color: Color(0xFF182022),
+              shape: BoxShape.circle,
+            ),
+          );
+        }),
       ),
     );
   }

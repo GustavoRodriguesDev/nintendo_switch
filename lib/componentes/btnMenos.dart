@@ -10,15 +10,15 @@ class BtnMenos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
-      width: 150,
+      height: 25,
+      width: 25,
       child: Positioned(
         top: 10,
         bottom: 10,
         right: 10,
         left: 10,
         child: Center(
-          child: Retangulo(altura: 40, largura: 130),
+          child: Retangulo(altura: 6, largura: 19),
         ),
       ),
     );
