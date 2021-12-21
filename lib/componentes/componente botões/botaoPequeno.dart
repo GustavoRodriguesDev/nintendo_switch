@@ -1,19 +1,22 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, file_names
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, file_names, unnecessary_import, must_be_immutable
 
 import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class BotaoPequeno extends StatelessWidget {
-  final double size;
+enum Type { letter, icon }
 
+class BotaoPequeno extends StatelessWidget {
+  final Type type;
+  final double size;
   final double? sizeIcom;
   final AlignmentGeometry gradientBegin;
   final AlignmentGeometry gradientEnd;
   final double? angule;
   final String? letterButton;
-  const BotaoPequeno({
+  late Widget? typeAction;
+  BotaoPequeno({
     Key? key,
     required this.size,
     required this.gradientBegin,
@@ -21,11 +24,51 @@ class BotaoPequeno extends StatelessWidget {
     this.sizeIcom,
     this.angule,
     this.letterButton,
+    required this.type,
+    this.typeAction,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (letterButton != null) {}
+    switch (type) {
+      case Type.icon:
+        typeAction = LayoutBuilder(
+          builder: (context, constraints) {
+            return Transform(
+              alignment: Alignment.center,
+              transform: Matrix4.rotationZ(angule! * pi / 180),
+              child: Icon(
+                Icons.play_arrow,
+                size: constraints.maxWidth * 0.68,
+              ),
+            );
+          },
+        );
+
+        break;
+      case Type.letter:
+        typeAction = LayoutBuilder(
+          builder: (context, constraints) {
+            return Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: const EdgeInsets.all(3.0),
+                child: Text(
+                  letterButton!,
+                  textAlign: TextAlign.end,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: constraints.maxWidth * 0.68,
+                      fontWeight: FontWeight.w300),
+                ),
+              ),
+            );
+          },
+        );
+
+        break;
+      default:
+    }
 
     return Container(
       height: size,
@@ -58,33 +101,7 @@ class BotaoPequeno extends StatelessWidget {
             ],
           ),
         ),
-        child: letterButton != null
-            ? LayoutBuilder(builder: (context, constraints) {
-                return Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: Text(
-                      letterButton!,
-                      textAlign: TextAlign.end,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: constraints.maxWidth * 0.68,
-                          fontWeight: FontWeight.w300),
-                    ),
-                  ),
-                );
-              })
-            : LayoutBuilder(builder: (context, constraints) {
-                return Transform(
-                  alignment: Alignment.center,
-                  transform: Matrix4.rotationZ(angule! * pi / 180),
-                  child: Icon(
-                    Icons.play_arrow,
-                    size: constraints.maxWidth * 0.68,
-                  ),
-                );
-              }),
+        child: typeAction,
       ),
     );
   }

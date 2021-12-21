@@ -16,6 +16,7 @@ class ActionButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           BotaoPequeno(
+            type: Type.letter,
             size: 28,
             gradientBegin: Alignment.bottomCenter,
             gradientEnd: Alignment.topCenter,
@@ -25,12 +26,14 @@ class ActionButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               BotaoPequeno(
-                size: 28,
+                type: Type.letter,
                 gradientBegin: Alignment.bottomCenter,
                 gradientEnd: Alignment.topCenter,
+                size: 28,
                 letterButton: 'Y',
               ),
               BotaoPequeno(
+                type: Type.letter,
                 size: 28,
                 gradientBegin: Alignment.bottomCenter,
                 gradientEnd: Alignment.topCenter,
@@ -39,6 +42,7 @@ class ActionButton extends StatelessWidget {
             ],
           ),
           BotaoPequeno(
+            type: Type.letter,
             size: 28,
             gradientBegin: Alignment.bottomCenter,
             gradientEnd: Alignment.topCenter,

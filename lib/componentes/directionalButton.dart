@@ -18,6 +18,7 @@ class DirectionalButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           BotaoPequeno(
+            type: Type.icon,
             size: 28,
             sizeIcom: 25,
             gradientBegin: Alignment.bottomCenter,
@@ -28,12 +29,14 @@ class DirectionalButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               BotaoPequeno(
+                  type: Type.icon,
                   size: 28,
                   sizeIcom: 25,
                   gradientBegin: Alignment.bottomCenter,
                   gradientEnd: Alignment.topCenter,
                   angule: 180),
               BotaoPequeno(
+                  type: Type.icon,
                   size: 28,
                   sizeIcom: 25,
                   gradientBegin: Alignment.bottomCenter,
@@ -42,6 +45,7 @@ class DirectionalButton extends StatelessWidget {
             ],
           ),
           BotaoPequeno(
+            type: Type.icon,
             size: 28,
             sizeIcom: 25,
             gradientBegin: Alignment.bottomCenter,

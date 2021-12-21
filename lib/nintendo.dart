@@ -2,16 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:nintendo_switch/componentes/Lamp_grup.dart';
-import 'package:nintendo_switch/componentes/btnMenos.dart';
-import 'package:nintendo_switch/componentes/componente%20bot%C3%B5es/lamp.dart';
-import 'package:nintendo_switch/componentes/control.dart';
 import 'package:nintendo_switch/componentes/keyboard.dart';
-import 'package:nintendo_switch/componentes/plusButton.dart';
-import 'package:nintendo_switch/componentes/actionButton.dart';
-import 'package:nintendo_switch/componentes/bigButton.dart';
-import 'package:nintendo_switch/componentes/directionalButton.dart';
-import 'package:nintendo_switch/componentes/homeButton.dart';
-import 'package:nintendo_switch/componentes/soundButton.dart';
 
 class NintendoSwitch extends StatefulWidget {
   const NintendoSwitch({Key? key}) : super(key: key);
