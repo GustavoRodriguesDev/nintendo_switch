@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:nintendo_switch/componentes/actionButton.dart';
 import 'package:nintendo_switch/componentes/bigButton.dart';
 import 'package:nintendo_switch/componentes/btnMenos.dart';
@@ -39,28 +40,34 @@ class Keybord extends StatelessWidget {
         );
 
         child = Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Align(
-                alignment: Alignment.topLeft,
-                child: BtnMenos(),
-              ),
-              Align(
-                alignment: Alignment.center,
-                child: BigButton(),
-              ),
-              Align(
-                alignment: Alignment.center,
-                child: DirectionalButton(),
-              ),
-              Align(
-                alignment: Alignment.bottomLeft,
-                child: SoundButton(size: 23.5),
-              ),
-            ],
-          ),
+          padding: EdgeInsets.all(heigth * 0.04),
+          child: LayoutBuilder(builder: (context, constraints) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: BtnMenos(
+                    size: heigth * 0.07,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.center,
+                  child: BigButton(
+                    size: heigth * 0.22,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.center,
+                  child: DirectionalButton(size: heigth * 0.32),
+                ),
+                Align(
+                  alignment: Alignment.bottomLeft,
+                  child: SoundButton(size: heigth * 0.09),
+                ),
+              ],
+            );
+          }),
         );
         break;
       case Side.right:
@@ -71,25 +78,33 @@ class Keybord extends StatelessWidget {
           ),
         );
         child = Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(heigth * 0.04),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Align(
                 alignment: Alignment.topRight,
-                child: PLusButton(),
+                child: PLusButton(
+                  size: heigth * 0.07,
+                ),
               ),
               Align(
                 alignment: Alignment.center,
-                child: ActionButton(),
+                child: ActionButton(
+                  size: heigth * 0.32,
+                ),
               ),
               Align(
                 alignment: Alignment.center,
-                child: BigButton(),
+                child: BigButton(
+                  size: heigth * 0.22,
+                ),
               ),
               Align(
                 alignment: Alignment.bottomRight,
-                child: HomeButton(size: 29),
+                child: HomeButton(
+                  size: heigth * 0.11,
+                ),
               )
             ],
           ),

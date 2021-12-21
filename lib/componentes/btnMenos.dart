@@ -5,20 +5,25 @@ import 'package:flutter/widgets.dart';
 import 'componente botões/mais_menos.dart';
 
 class BtnMenos extends StatelessWidget {
-  const BtnMenos({Key? key}) : super(key: key);
+  double size;
+  BtnMenos({required this.size});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 25,
-      width: 25,
-      child: Stack(
-        children: [
-          Center(
-            child: Retangulo(altura: 6, largura: 19),
-          ),
-        ],
-      ),
+      height: size,
+      width: size,
+      child: LayoutBuilder(builder: (context, constraints) {
+        return Stack(
+          children: [
+            Center(
+              child: Retangulo(
+                  altura: constraints.maxHeight * 0.31,
+                  largura: constraints.maxWidth * 1),
+            ),
+          ],
+        );
+      }),
     );
   }
 }

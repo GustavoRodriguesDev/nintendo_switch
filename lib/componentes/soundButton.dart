@@ -24,32 +24,34 @@ class SoundButton extends StatelessWidget {
           stops: [0.0, 1.0],
         ),
       ),
-      child: Container(
-        width: size * 0.85,
-        height: size * 0.85,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
-          gradient: LinearGradient(
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
-            colors: [
-              Color(0xFF4A494E),
-              Color(0xFF525157),
-            ],
-          ),
-        ),
-        child: LayoutBuilder(builder: (context, constraints) {
-          return Container(
-            width: constraints.maxWidth * 0.80,
-            height: constraints.maxHeight * 0.80,
-            decoration: BoxDecoration(
-              color: Color(0xFF182022),
-              shape: BoxShape.circle,
+      child: LayoutBuilder(builder: (context, constraints) {
+        return Container(
+          width: constraints.maxWidth * 0.85,
+          height: constraints.maxWidth * 0.85,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5),
+            gradient: LinearGradient(
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+              colors: [
+                Color(0xFF4A494E),
+                Color(0xFF525157),
+              ],
             ),
-          );
-        }),
-      ),
+          ),
+          child: LayoutBuilder(builder: (context, constraints) {
+            return Container(
+              width: constraints.maxWidth * 0.72,
+              height: constraints.maxWidth * 0.72,
+              decoration: BoxDecoration(
+                color: Color(0xFF182022),
+                shape: BoxShape.circle,
+              ),
+            );
+          }),
+        );
+      }),
     );
   }
 }

@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 class BigButton extends StatelessWidget {
   final double size;
-  const BigButton({
+  BigButton({
     Key? key,
-    this.size = 58,
+    required this.size,
   }) : super(key: key);
 
 //1 - tipo
