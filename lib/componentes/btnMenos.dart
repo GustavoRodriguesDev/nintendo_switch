@@ -1,4 +1,4 @@
-// ignore_for_file: sized_box_for_whitespace, prefer_const_constructors
+// ignore_for_file: sized_box_for_whitespace, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/widgets.dart';
 
@@ -12,14 +12,12 @@ class BtnMenos extends StatelessWidget {
     return Container(
       height: 25,
       width: 25,
-      child: Positioned(
-        top: 10,
-        bottom: 10,
-        right: 10,
-        left: 10,
-        child: Center(
-          child: Retangulo(altura: 6, largura: 19),
-        ),
+      child: Stack(
+        children: [
+          Center(
+            child: Retangulo(altura: 6, largura: 19),
+          ),
+        ],
       ),
     );
   }

@@ -28,11 +28,9 @@ class Control extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (alignControl == Alignment.bottomRight) {}
-
     return Container(
-      height: 257,
-      width: 124,
+      height: heightControl,
+      width: widthControl,
       decoration: BoxDecoration(
         borderRadius: radiusControl,
         color: colorControl,

@@ -5,6 +5,7 @@ import 'package:nintendo_switch/componentes/Lamp_grup.dart';
 import 'package:nintendo_switch/componentes/btnMenos.dart';
 import 'package:nintendo_switch/componentes/componente%20bot%C3%B5es/lamp.dart';
 import 'package:nintendo_switch/componentes/control.dart';
+import 'package:nintendo_switch/componentes/keyboard.dart';
 import 'package:nintendo_switch/componentes/plusButton.dart';
 import 'package:nintendo_switch/componentes/actionButton.dart';
 import 'package:nintendo_switch/componentes/bigButton.dart';
@@ -22,11 +23,13 @@ class NintendoSwitch extends StatefulWidget {
 class _NintendoSwitchState extends State<NintendoSwitch> {
   @override
   Widget build(BuildContext context) {
-    double size = MediaQuery.of(context).size.width;
+    double width = double.maxFinite;
+    double height = double.maxFinite;
     return Scaffold(
       body: Container(
         color: Color(0xFF32383A),
-        width: size,
+        width: width,
+        height: height,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -40,35 +43,11 @@ class _NintendoSwitchState extends State<NintendoSwitch> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Control(
-                  alignControl: Alignment.bottomLeft,
-                  colorControl: Color(0xFF00BDDD),
-                  heightControl: 257,
-                  widthControl: 123,
-                  radiusControl: BorderRadius.only(
-                    topRight: Radius.circular(80),
-                  ),
-                  btn1: BtnMenos(),
-                  btn2: BigButton(),
-                  btn3: DirectionalButton(),
-                  btn4: SoundButton(size: 23),
-                ),
+                Keybord(side: Side.left),
                 LampGroup(),
                 FlutterLogo(),
                 LampGroup(),
-                Control(
-                  alignControl: Alignment.bottomRight,
-                  colorControl: Color(0xFFFF5F53),
-                  heightControl: 257,
-                  widthControl: 123,
-                  radiusControl: BorderRadius.only(
-                    topLeft: Radius.circular(80),
-                  ),
-                  btn1: PLusButton(),
-                  btn2: ActionButton(),
-                  btn3: BigButton(),
-                  btn4: HomeButton(size: 29),
-                ),
+                Keybord(side: Side.right),
               ],
             ),
           ],
