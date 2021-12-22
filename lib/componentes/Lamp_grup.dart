@@ -9,7 +9,7 @@ class LampGroup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 50,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

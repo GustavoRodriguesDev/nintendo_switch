@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:nintendo_switch/componentes/Lamp_grup.dart';
 import 'package:nintendo_switch/componentes/keyboard.dart';
+import 'package:nintendo_switch/componentes/logo.dart';
+import 'package:nintendo_switch/componentes/screen_black.dart';
 
 class NintendoSwitch extends StatefulWidget {
   const NintendoSwitch({Key? key}) : super(key: key);
@@ -26,29 +28,12 @@ class _NintendoSwitchState extends State<NintendoSwitch> {
           return Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 25,
-                  left: 22,
-                  right: 22,
-                ),
-                child: Container(
-                  height: height * 0.53,
-                  width: width * 0.88,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                      color: Color(0xFF000000)),
-                ),
+              ScreenBlack(
+                paddingTop: height * 0.037,
+                paddingSide: width * 0.058,
+                height: height * 0.53,
+                widith: width * 0.88,
               ),
-              // BigButton(size: 59),
-              // SoundButton(),
-              // HomeButton(size: 29),
-              // DirectionalButton(),
-              // ActionButton(),
-              // PLusButton(),
-              // BtnMenos(),
               Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

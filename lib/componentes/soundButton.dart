@@ -1,10 +1,10 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, file_names
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, file_names, must_be_immutable
 
 import 'package:flutter/material.dart';
 
 class SoundButton extends StatelessWidget {
   double size;
-  SoundButton({required this.size});
+  SoundButton({required this.size, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

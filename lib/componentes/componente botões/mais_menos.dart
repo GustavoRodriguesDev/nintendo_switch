@@ -5,10 +5,8 @@ import 'package:flutter/material.dart';
 class Retangulo extends StatelessWidget {
   final double altura;
   final double largura;
-  const Retangulo({
-    required this.altura,
-    required this.largura,
-  });
+  const Retangulo({required this.altura, required this.largura, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
