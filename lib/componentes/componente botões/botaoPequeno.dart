@@ -1,71 +1,85 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, file_names, unnecessary_import, must_be_immutable
 
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-enum Type { letter, icon }
+enum Position { up, right, left, down }
 
 class BotaoPequeno extends StatelessWidget {
-  final Type type;
+  final Position align;
   final double size;
-  final double? sizeIcom;
-  final AlignmentGeometry gradientBegin;
-  final AlignmentGeometry gradientEnd;
-  final double? angule;
+
   final String? letterButton;
   late Widget? typeAction;
-  BotaoPequeno({
-    Key? key,
-    required this.size,
-    required this.gradientBegin,
-    required this.gradientEnd,
-    this.sizeIcom,
-    this.angule,
-    this.letterButton,
-    required this.type,
-    this.typeAction,
-  }) : super(key: key);
+  late Decoration? decoration;
+
+  BotaoPequeno(
+      {Key? key,
+      required this.size,
+      this.letterButton,
+      required this.align,
+      this.typeAction,
+      this.decoration})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    switch (type) {
-      case Type.icon:
-        typeAction = LayoutBuilder(
-          builder: (context, constraints) {
-            return Transform(
-              alignment: Alignment.center,
-              transform: Matrix4.rotationZ(angule! * pi / 180),
-              child: Icon(
-                Icons.play_arrow,
-                size: constraints.maxWidth * 0.68,
-              ),
-            );
-          },
+    switch (align) {
+      case Position.up:
+        decoration = BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xFF050F11),
+              Color(0xFF7B8287),
+            ],
+            stops: [0.10, 9.0],
+          ),
         );
-
         break;
-      case Type.letter:
-        typeAction = LayoutBuilder(
-          builder: (context, constraints) {
-            return Align(
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding: const EdgeInsets.all(3.0),
-                child: Text(
-                  letterButton!,
-                  textAlign: TextAlign.end,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: constraints.maxWidth * 0.68,
-                      fontWeight: FontWeight.w300),
-                ),
-              ),
-            );
-          },
+      case Position.right:
+        decoration = BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xFF050F11),
+              Color(0xFF7B8287),
+            ],
+            stops: [0.10, 9.0],
+          ),
         );
-
+        break;
+      case Position.left:
+        decoration = BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xFF050F11),
+              Color(0xFF7B8287),
+            ],
+            stops: [0.10, 9.0],
+          ),
+        );
+        break;
+      case Position.down:
+        decoration = BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xFF050F11),
+              Color(0xFF7B8287),
+            ],
+            stops: [0.10, 9.0],
+          ),
+        );
         break;
       default:
     }
@@ -74,18 +88,7 @@ class BotaoPequeno extends StatelessWidget {
       height: size,
       width: size,
       alignment: Alignment.center,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        gradient: LinearGradient(
-          begin: gradientBegin,
-          end: gradientEnd,
-          colors: [
-            Color(0xFF050F11),
-            Color(0xFF7B8287),
-          ],
-          stops: [0.10, 9.0],
-        ),
-      ),
+      decoration: decoration,
       child: Container(
         width: size * 0.78,
         height: size * 0.78,

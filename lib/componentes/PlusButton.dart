@@ -1,13 +1,12 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, file_names, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, file_names, sized_box_for_whitespace, must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 import 'componente botões/mais_menos.dart';
 
 class PLusButton extends StatelessWidget {
   double size;
-  PLusButton({required this.size});
+  PLusButton({required this.size, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

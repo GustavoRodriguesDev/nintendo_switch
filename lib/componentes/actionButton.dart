@@ -1,6 +1,7 @@
-// ignore_for_file: sized_box_for_whitespace, prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names
+// ignore_for_file: sized_box_for_whitespace, prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names, must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:nintendo_switch/componentes/componente%20bot%C3%B5es/letter_action.dart';
 
 import 'componente botões/botaoPequeno.dart';
 
@@ -18,37 +19,41 @@ class ActionButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             BotaoPequeno(
-              type: Type.letter,
+              align: Position.up,
               size: constraints.maxWidth * 0.32,
-              gradientBegin: Alignment.bottomCenter,
-              gradientEnd: Alignment.topCenter,
-              letterButton: 'X',
+              typeAction: LatterAction(
+                letter: 'X',
+                sizeLetter: constraints.maxWidth * 0.17,
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 BotaoPequeno(
-                  type: Type.letter,
-                  gradientBegin: Alignment.bottomCenter,
-                  gradientEnd: Alignment.topCenter,
+                  align: Position.right,
                   size: constraints.maxWidth * 0.32,
-                  letterButton: 'Y',
+                  typeAction: LatterAction(
+                    letter: 'A',
+                    sizeLetter: constraints.maxWidth * 0.17,
+                  ),
                 ),
                 BotaoPequeno(
-                  type: Type.letter,
+                  align: Position.left,
                   size: constraints.maxWidth * 0.32,
-                  gradientBegin: Alignment.centerRight,
-                  gradientEnd: Alignment.centerLeft,
-                  letterButton: 'A',
+                  typeAction: LatterAction(
+                    letter: 'Y',
+                    sizeLetter: constraints.maxWidth * 0.17,
+                  ),
                 ),
               ],
             ),
             BotaoPequeno(
-              type: Type.letter,
+              align: Position.down,
               size: constraints.maxWidth * 0.32,
-              gradientBegin: Alignment.centerRight,
-              gradientEnd: Alignment.centerLeft,
-              letterButton: 'B',
+              typeAction: LatterAction(
+                letter: 'R',
+                sizeLetter: constraints.maxWidth * 0.17,
+              ),
             ),
           ],
         );

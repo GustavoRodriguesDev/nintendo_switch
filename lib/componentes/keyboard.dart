@@ -1,13 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:nintendo_switch/componentes/actionButton.dart';
 import 'package:nintendo_switch/componentes/bigButton.dart';
 import 'package:nintendo_switch/componentes/btnMenos.dart';
 import 'package:nintendo_switch/componentes/directionalButton.dart';
-import 'package:nintendo_switch/componentes/homeButton.dart';
-import 'package:nintendo_switch/componentes/plusButton.dart';
 import 'package:nintendo_switch/componentes/soundButton.dart';
 
 enum Side { left, right }
@@ -44,27 +40,28 @@ class Keybord extends StatelessWidget {
           child: LayoutBuilder(builder: (context, constraints) {
             return Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: BtnMenos(
-                    size: heigth * 0.07,
-                  ),
+                BtnMenos(
+                  size: heigth * 0.07,
                 ),
-                Align(
-                  alignment: Alignment.center,
-                  child: BigButton(
-                    size: heigth * 0.22,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Column(
+                      children: [
+                        BigButton(
+                          size: heigth * 0.22,
+                        ),
+                        SizedBox(
+                          height: constraints.maxHeight * 0.05,
+                        ),
+                        DirectionalButton(size: width * 0.69),
+                      ],
+                    ),
+                  ],
                 ),
-                Align(
-                  alignment: Alignment.center,
-                  child: DirectionalButton(size: heigth * 0.32),
-                ),
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: SoundButton(size: heigth * 0.09),
-                ),
+                SoundButton(size: heigth * 0.09),
               ],
             );
           }),
@@ -77,37 +74,37 @@ class Keybord extends StatelessWidget {
             topLeft: Radius.circular(80),
           ),
         );
+
         child = Padding(
           padding: EdgeInsets.all(heigth * 0.04),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Align(
-                alignment: Alignment.topRight,
-                child: PLusButton(
+          child: LayoutBuilder(builder: (context, constraints) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                BtnMenos(
                   size: heigth * 0.07,
                 ),
-              ),
-              Align(
-                alignment: Alignment.center,
-                child: ActionButton(
-                  size: heigth * 0.32,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Column(
+                      children: [
+                        BigButton(
+                          size: heigth * 0.22,
+                        ),
+                        SizedBox(
+                          height: constraints.maxHeight * 0.05,
+                        ),
+                        DirectionalButton(size: width * 0.69),
+                      ],
+                    ),
+                  ],
                 ),
-              ),
-              Align(
-                alignment: Alignment.center,
-                child: BigButton(
-                  size: heigth * 0.22,
-                ),
-              ),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: HomeButton(
-                  size: heigth * 0.11,
-                ),
-              )
-            ],
-          ),
+                SoundButton(size: heigth * 0.09),
+              ],
+            );
+          }),
         );
         break;
       default:
