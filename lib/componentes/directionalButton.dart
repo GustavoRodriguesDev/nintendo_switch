@@ -24,7 +24,7 @@ class DirectionalButton extends StatelessWidget {
               align: Position.up,
               size: constraints.maxWidth * 0.32,
               typeAction: IconsActions(
-                angle: 270,
+                position: Position.up,
                 sizeIcons: constraints.maxWidth * 0.19,
               ),
             ),
@@ -35,7 +35,7 @@ class DirectionalButton extends StatelessWidget {
                   align: Position.right,
                   size: constraints.maxWidth * 0.32,
                   typeAction: IconsActions(
-                    angle: 180,
+                    position: Position.right,
                     sizeIcons: constraints.maxWidth * 0.19,
                   ),
                 ),
@@ -43,7 +43,7 @@ class DirectionalButton extends StatelessWidget {
                   align: Position.left,
                   size: constraints.maxWidth * 0.32,
                   typeAction: IconsActions(
-                    angle: 0,
+                    position: Position.left,
                     sizeIcons: constraints.maxWidth * 0.19,
                   ),
                 ),
@@ -53,7 +53,7 @@ class DirectionalButton extends StatelessWidget {
               align: Position.down,
               size: constraints.maxWidth * 0.32,
               typeAction: IconsActions(
-                angle: 90,
+                position: Position.down,
                 sizeIcons: constraints.maxWidth * 0.19,
               ),
             ),

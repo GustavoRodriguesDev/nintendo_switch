@@ -1,10 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:nintendo_switch/componentes/Lamp_grup.dart';
 import 'package:nintendo_switch/componentes/keyboard.dart';
-import 'package:nintendo_switch/componentes/logo.dart';
 import 'package:nintendo_switch/componentes/screen_black.dart';
+import 'componentes/lamp.dart';
 
 class NintendoSwitch extends StatefulWidget {
   const NintendoSwitch({Key? key}) : super(key: key);
@@ -21,9 +20,18 @@ class _NintendoSwitchState extends State<NintendoSwitch> {
 
     return Scaffold(
       body: Container(
-        color: Color(0xFF32383A),
         width: width,
         height: height,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xFF4B5054),
+              Color(0xFF272B2E),
+            ],
+          ),
+        ),
         child: LayoutBuilder(builder: (context, constraints) {
           return Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -43,9 +51,35 @@ class _NintendoSwitchState extends State<NintendoSwitch> {
                     heigth: height * 0.38,
                     width: width * 0.32,
                   ),
-                  LampGroup(),
+                  SizedBox(
+                    height: height * 0.074,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Lamp(
+                            lampState: Lampstate.lampOn, size: height * 0.0082),
+                        Lamp(
+                            lampState: Lampstate.lampOff,
+                            size: height * 0.0082),
+                        Lamp(
+                            lampState: Lampstate.lampOff,
+                            size: height * 0.0082),
+                        Lamp(
+                            lampState: Lampstate.lampOff,
+                            size: height * 0.0082),
+                      ],
+                    ),
+                  ),
                   FlutterLogo(),
-                  LampGroup(),
+                  SizedBox(
+                    height: height * 0.074,
+                    width: 10,
+                    child: ListView.builder(
+                        itemCount: 4,
+                        itemBuilder: (_, index) => Lamp(
+                            lampState: Lampstate.lampOff,
+                            size: height * 0.0082)),
+                  ),
                   Keybord(
                     side: Side.right,
                     heigth: height * 0.38,

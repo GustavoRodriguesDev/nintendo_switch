@@ -13,22 +13,13 @@ class PLusButton extends StatelessWidget {
     return Container(
       height: size,
       width: size,
-      child: LayoutBuilder(builder: (context, constraints) {
-        return Stack(
-          children: [
-            Center(
-              child: Retangulo(
-                  altura: constraints.maxHeight * 0.31,
-                  largura: constraints.maxWidth * 1),
-            ),
-            Center(
-              child: Retangulo(
-                  altura: constraints.maxHeight * 1,
-                  largura: constraints.maxWidth * 0.31),
-            ),
-          ],
-        );
-      }),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Retangulo(altura: size * 0.31, largura: size * 1),
+          Retangulo(altura: size * 1, largura: size * 0.31),
+        ],
+      ),
     );
   }
 }

@@ -29,7 +29,7 @@ class ScreenBlack extends StatelessWidget {
         width: widith,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(
-            Radius.circular(10),
+            Radius.circular(height * 0.026),
           ),
           color: Color(0xFF000000),
         ),

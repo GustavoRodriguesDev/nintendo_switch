@@ -23,7 +23,7 @@ class ActionButton extends StatelessWidget {
               size: constraints.maxWidth * 0.32,
               typeAction: LatterAction(
                 letter: 'X',
-                sizeLetter: constraints.maxWidth * 0.17,
+                size: constraints.maxWidth * 0.17,
               ),
             ),
             Row(
@@ -34,7 +34,7 @@ class ActionButton extends StatelessWidget {
                   size: constraints.maxWidth * 0.32,
                   typeAction: LatterAction(
                     letter: 'A',
-                    sizeLetter: constraints.maxWidth * 0.17,
+                    size: constraints.maxWidth * 0.17,
                   ),
                 ),
                 BotaoPequeno(
@@ -42,7 +42,7 @@ class ActionButton extends StatelessWidget {
                   size: constraints.maxWidth * 0.32,
                   typeAction: LatterAction(
                     letter: 'Y',
-                    sizeLetter: constraints.maxWidth * 0.17,
+                    size: constraints.maxWidth * 0.17,
                   ),
                 ),
               ],
@@ -52,7 +52,7 @@ class ActionButton extends StatelessWidget {
               size: constraints.maxWidth * 0.32,
               typeAction: LatterAction(
                 letter: 'R',
-                sizeLetter: constraints.maxWidth * 0.17,
+                size: constraints.maxWidth * 0.17,
               ),
             ),
           ],

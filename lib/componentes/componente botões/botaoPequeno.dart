@@ -3,7 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-enum Position { up, right, left, down }
+enum Position {
+  left,
+  down,
+  right,
+  up,
+}
 
 class BotaoPequeno extends StatelessWidget {
   final Position align;

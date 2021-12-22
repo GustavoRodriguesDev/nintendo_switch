@@ -13,7 +13,7 @@ class SoundButton extends StatelessWidget {
       height: size,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(4),
+        borderRadius: BorderRadius.circular(size * 0.1),
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomLeft,
@@ -30,7 +30,7 @@ class SoundButton extends StatelessWidget {
           height: constraints.maxWidth * 0.85,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(constraints.maxHeight * 0.078),
             gradient: LinearGradient(
               begin: Alignment.bottomCenter,
               end: Alignment.topCenter,

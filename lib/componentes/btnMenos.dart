@@ -14,14 +14,10 @@ class BtnMenos extends StatelessWidget {
       height: size,
       width: size,
       child: LayoutBuilder(builder: (context, constraints) {
-        return Stack(
-          children: [
-            Center(
-              child: Retangulo(
-                  altura: constraints.maxHeight * 0.31,
-                  largura: constraints.maxWidth * 1),
-            ),
-          ],
+        return Center(
+          child: Retangulo(
+              altura: constraints.maxHeight * 0.31,
+              largura: constraints.maxWidth * 1),
         );
       }),
     );

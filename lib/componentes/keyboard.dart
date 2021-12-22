@@ -1,9 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:nintendo_switch/componentes/actionButton.dart';
 import 'package:nintendo_switch/componentes/bigButton.dart';
 import 'package:nintendo_switch/componentes/btnMenos.dart';
 import 'package:nintendo_switch/componentes/directionalButton.dart';
+import 'package:nintendo_switch/componentes/homeButton.dart';
+import 'package:nintendo_switch/componentes/plusButton.dart';
 import 'package:nintendo_switch/componentes/soundButton.dart';
 
 enum Side { left, right }
@@ -28,10 +31,10 @@ class Keybord extends StatelessWidget {
 
     switch (side) {
       case Side.left:
-        decoration = const BoxDecoration(
+        decoration = BoxDecoration(
           color: Color(0xFF00BDDD),
           borderRadius: BorderRadius.only(
-            topRight: Radius.circular(80),
+            topRight: Radius.circular(width * 0.65),
           ),
         );
 
@@ -68,10 +71,10 @@ class Keybord extends StatelessWidget {
         );
         break;
       case Side.right:
-        decoration = const BoxDecoration(
+        decoration = BoxDecoration(
           color: Color(0xFFFF5F53),
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(80),
+            topLeft: Radius.circular(width * 0.65),
           ),
         );
 
@@ -82,7 +85,7 @@ class Keybord extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                BtnMenos(
+                PLusButton(
                   size: heigth * 0.07,
                 ),
                 Row(
@@ -90,18 +93,18 @@ class Keybord extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        BigButton(
-                          size: heigth * 0.22,
-                        ),
+                        ActionButton(size: width * 0.69),
                         SizedBox(
                           height: constraints.maxHeight * 0.05,
                         ),
-                        DirectionalButton(size: width * 0.69),
+                        BigButton(
+                          size: heigth * 0.22,
+                        ),
                       ],
                     ),
                   ],
                 ),
-                SoundButton(size: heigth * 0.09),
+                HomeButton(size: width * 0.24),
               ],
             );
           }),
