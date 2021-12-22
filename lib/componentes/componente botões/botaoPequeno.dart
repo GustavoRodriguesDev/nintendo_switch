@@ -37,8 +37,8 @@ class BotaoPequeno extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xFF050F11),
               Color(0xFF7B8287),
+              Color(0xFF050F11),
             ],
             stops: [0.10, 9.0],
           ),
@@ -51,8 +51,8 @@ class BotaoPequeno extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xFF050F11),
               Color(0xFF7B8287),
+              Color(0xFF050F11),
             ],
             stops: [0.10, 9.0],
           ),
@@ -62,11 +62,11 @@ class BotaoPequeno extends StatelessWidget {
         decoration = BoxDecoration(
           shape: BoxShape.circle,
           gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
+            begin: Alignment.centerLeft,
+            end: Alignment.center,
             colors: [
-              Color(0xFF050F11),
               Color(0xFF7B8287),
+              Color(0xFF050F11),
             ],
             stops: [0.10, 9.0],
           ),
@@ -76,11 +76,11 @@ class BotaoPequeno extends StatelessWidget {
         decoration = BoxDecoration(
           shape: BoxShape.circle,
           gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
+            begin: Alignment.centerLeft,
+            end: Alignment.center,
             colors: [
-              Color(0xFF050F11),
               Color(0xFF7B8287),
+              Color(0xFF050F11),
             ],
             stops: [0.10, 9.0],
           ),
