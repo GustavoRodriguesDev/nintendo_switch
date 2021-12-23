@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:nintendo_switch/componentes/logo.dart';
+import 'package:nintendo_switch/componentes/logo/logo.dart';
 
 class ScreenBlack extends StatelessWidget {
   final double paddingTop;
@@ -34,8 +34,11 @@ class ScreenBlack extends StatelessWidget {
           color: Color(0xFF000000),
         ),
         child: LayoutBuilder(builder: (context, constraints) {
-          return Logo(
-            size: constraints.maxWidth * 0.35,
+          return Center(
+            child: Logo(
+              size: constraints.maxHeight * 0.38,
+              colors: Colors.white,
+            ),
           );
         }),
       ),
