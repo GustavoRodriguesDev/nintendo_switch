@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:nintendo_switch/componentes/keyboard.dart';
+import 'package:nintendo_switch/componentes/key_board.dart';
 import 'package:nintendo_switch/componentes/logo/logo.dart';
 import 'package:nintendo_switch/componentes/screen_black.dart';
 import 'componentes/lamp.dart';

@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:nintendo_switch/componentes/componente%20bot%C3%B5es/botaoPequeno.dart';
+import 'package:nintendo_switch/componentes/componente%20bot%C3%B5es/botao_pequeno.dart';
 
 class IconsActions extends StatelessWidget {
   final double sizeIcons;
