@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:nintendo_switch/componentes/keyboard.dart';
+import 'package:nintendo_switch/componentes/logo/logo.dart';
 import 'package:nintendo_switch/componentes/screen_black.dart';
 import 'componentes/lamp.dart';
 
@@ -53,32 +54,32 @@ class _NintendoSwitchState extends State<NintendoSwitch> {
                   ),
                   SizedBox(
                     height: height * 0.074,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Lamp(
-                            lampState: Lampstate.lampOn, size: height * 0.0082),
-                        Lamp(
-                            lampState: Lampstate.lampOff,
+                    width: 10,
+                    child: ListView.builder(
+                      itemCount: 4,
+                      itemBuilder: (_, index) => Padding(
+                        padding: const EdgeInsets.only(bottom: 6),
+                        child: Lamp(
+                            lampState: index == 0
+                                ? Lampstate.lampOn
+                                : Lampstate.lampOff,
                             size: height * 0.0082),
-                        Lamp(
-                            lampState: Lampstate.lampOff,
-                            size: height * 0.0082),
-                        Lamp(
-                            lampState: Lampstate.lampOff,
-                            size: height * 0.0082),
-                      ],
+                      ),
                     ),
                   ),
-                  FlutterLogo(),
+                  Logo(size: constraints.maxWidth * 0.12, colors: Colors.black),
                   SizedBox(
                     height: height * 0.074,
                     width: 10,
                     child: ListView.builder(
-                        itemCount: 4,
-                        itemBuilder: (_, index) => Lamp(
+                      itemCount: 4,
+                      itemBuilder: (_, index) => Padding(
+                        padding: const EdgeInsets.only(bottom: 6),
+                        child: Lamp(
                             lampState: Lampstate.lampOff,
-                            size: height * 0.0082)),
+                            size: height * 0.0082),
+                      ),
+                    ),
                   ),
                   Keybord(
                     side: Side.right,
