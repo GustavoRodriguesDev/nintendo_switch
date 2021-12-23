@@ -1,13 +1,13 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:nintendo_switch/componentes/actionButton.dart';
-import 'package:nintendo_switch/componentes/bigButton.dart';
-import 'package:nintendo_switch/componentes/btnMenos.dart';
-import 'package:nintendo_switch/componentes/directionalButton.dart';
-import 'package:nintendo_switch/componentes/homeButton.dart';
-import 'package:nintendo_switch/componentes/plusButton.dart';
-import 'package:nintendo_switch/componentes/soundButton.dart';
+import 'package:nintendo_switch/componentes/action_button.dart';
+import 'package:nintendo_switch/componentes/big_button.dart';
+import 'package:nintendo_switch/componentes/btn_menos.dart';
+import 'package:nintendo_switch/componentes/directional_button.dart';
+import 'package:nintendo_switch/componentes/home_button.dart';
+import 'package:nintendo_switch/componentes/plus_button.dart';
+import 'package:nintendo_switch/componentes/sound_button.dart';
 
 enum Side { left, right }
 
